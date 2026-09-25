@@ -1,0 +1,75 @@
+=== Profiling Report for test_source.tsv ===
+Exact file size on disk: 303 bytes
+Total rows: 9
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR (fallback)
+- business_name: VARCHAR (fallback)
+- business_address: VARCHAR (fallback)
+- country: VARCHAR (fallback)
+- column4: VARCHAR (fallback)
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 3 missing/null-like (33.33%)
+business_address: 3 missing/null-like (33.33%)
+country: 1 missing/null-like (11.11%)
+column4: 8 missing/null-like (88.89%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 8
+Rows with duplicate entity_id values: 2
+
+--- Business Name Stats ---
+Unique business names: 7
+Min length: 1
+Max length: 15
+Average length: 9.00
+Empty or extremely short names (<=2 chars): 1 (11.11%)
+
+--- Business Address Stats ---
+Min length: 2
+Max length: 24
+Average length: 14.25
+Empty or extremely short addresses (<=5 chars): 2 (22.22%)
+
+--- Country Stats ---
+Unique countries: 5
+Country distribution (Top 20):
+  US: 5
+  TX: 1
+  NULL: 1
+  CA: 1
+  MX: 1
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: '1'
+  business_name: 'Acme Corp'
+  business_address: '123 Main St, Springfield'
+  country: 'US'
+  column4: None
+
+Row 2:
+  entity_id: '2'
+  business_name: 'Globex Inc'
+  business_address: '456 Elm St, Shelbyville'
+  country: 'US'
+  column4: None
+
+Row 3:
+  entity_id: '3'
+  business_name: 'Initech'
+  business_address: None
+  country: 'TX'
+  column4: 'US'
+
+
+--- Performance ---
+Runtime: 0.20 seconds
+Approximate RAM usage: 57.60 MB

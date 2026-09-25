@@ -1,0 +1,67 @@
+=== Profiling Report for train_source1.tsv ===
+Exact file size on disk: 210,069,713 bytes
+Total rows: 2,206,821
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 0 missing/null-like (0.00%)
+business_address: 0 missing/null-like (0.00%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 2,206,821
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 1,539,229
+Min length: 3
+Max length: 105
+Average length: 24.03
+Empty or extremely short names (<=2 chars): 0 (0.00%)
+
+--- Business Address Stats ---
+Min length: 11
+Max length: 256
+Average length: 52.07
+Empty or extremely short addresses (<=5 chars): 0 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 1,323,633
+  India: 883,188
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S1-925783039'
+  business_name: "Orelee's Barbershop"
+  business_address: '1795 Westchester Drive, High Point, NC'
+  country: 'US'
+
+Row 2:
+  entity_id: 'S1-773889195'
+  business_name: 'Prime Money'
+  business_address: '17560 Ellis Road, Tahlequah, OK'
+  country: 'US'
+
+Row 3:
+  entity_id: 'S1-377745466'
+  business_name: 'B+ Retail Inc'
+  business_address: '1712 Montebello Avenue, Phoenix, AZ'
+  country: 'US'
+
+
+--- Performance ---
+Runtime: 7.46 seconds
+Approximate RAM usage: 65.89 MB

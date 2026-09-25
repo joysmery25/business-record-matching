@@ -1,0 +1,277 @@
+\n==================================================\nREPORT: test_source_profile.txt\n==================================================\n\n=== Profiling Report for test_source.tsv ===
+Exact file size on disk: 303 bytes
+Total rows: 9
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR (fallback)
+- business_name: VARCHAR (fallback)
+- business_address: VARCHAR (fallback)
+- country: VARCHAR (fallback)
+- column4: VARCHAR (fallback)
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 3 missing/null-like (33.33%)
+business_address: 3 missing/null-like (33.33%)
+country: 1 missing/null-like (11.11%)
+column4: 8 missing/null-like (88.89%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 8
+Rows with duplicate entity_id values: 2
+
+--- Business Name Stats ---
+Unique business names: 7
+Min length: 1
+Max length: 15
+Average length: 9.00
+Empty or extremely short names (<=2 chars): 1 (11.11%)
+
+--- Business Address Stats ---
+Min length: 2
+Max length: 24
+Average length: 14.25
+Empty or extremely short addresses (<=5 chars): 2 (22.22%)
+
+--- Country Stats ---
+Unique countries: 5
+Country distribution (Top 20):
+  US: 5
+  TX: 1
+  NULL: 1
+  CA: 1
+  MX: 1
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: '1'
+  business_name: 'Acme Corp'
+  business_address: '123 Main St, Springfield'
+  country: 'US'
+  column4: None
+
+Row 2:
+  entity_id: '2'
+  business_name: 'Globex Inc'
+  business_address: '456 Elm St, Shelbyville'
+  country: 'US'
+  column4: None
+
+Row 3:
+  entity_id: '3'
+  business_name: 'Initech'
+  business_address: None
+  country: 'TX'
+  column4: 'US'
+
+
+--- Performance ---
+Runtime: 0.20 seconds
+Approximate RAM usage: 57.60 MB
+\n\n==================================================\nREPORT: train_source1_profile.txt\n==================================================\n\n=== Profiling Report for train_source1.tsv ===
+Exact file size on disk: 210,069,713 bytes
+Total rows: 2,206,821
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 0 missing/null-like (0.00%)
+business_address: 0 missing/null-like (0.00%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 2,206,821
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 1,539,229
+Min length: 3
+Max length: 105
+Average length: 24.03
+Empty or extremely short names (<=2 chars): 0 (0.00%)
+
+--- Business Address Stats ---
+Min length: 11
+Max length: 256
+Average length: 52.07
+Empty or extremely short addresses (<=5 chars): 0 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 1,323,633
+  India: 883,188
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S1-925783039'
+  business_name: "Orelee's Barbershop"
+  business_address: '1795 Westchester Drive, High Point, NC'
+  country: 'US'
+
+Row 2:
+  entity_id: 'S1-773889195'
+  business_name: 'Prime Money'
+  business_address: '17560 Ellis Road, Tahlequah, OK'
+  country: 'US'
+
+Row 3:
+  entity_id: 'S1-377745466'
+  business_name: 'B+ Retail Inc'
+  business_address: '1712 Montebello Avenue, Phoenix, AZ'
+  country: 'US'
+
+
+--- Performance ---
+Runtime: 7.46 seconds
+Approximate RAM usage: 65.89 MB
+\n\n==================================================\nREPORT: train_source2_profile.txt\n==================================================\n\n=== Profiling Report for train_source2.tsv ===
+Exact file size on disk: 489,301,488 bytes
+Total rows: 5,034,616
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 5 missing/null-like (0.00%)
+business_address: 168,967 missing/null-like (3.36%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 5,034,616
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 4,402,009
+Min length: 2
+Max length: 104
+Average length: 25.10
+Empty or extremely short names (<=2 chars): 704 (0.01%)
+
+--- Business Address Stats ---
+Min length: 8
+Max length: 249
+Average length: 47.83
+Empty or extremely short addresses (<=5 chars): 0 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 3,016,817
+  India: 2,017,799
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S2-166376419'
+  business_name: 'राम मार्केटिंग प्राइवेट लिमिटेड'
+  business_address: 'KH NO. -570/13, NEW DELHI, WEST DELHI, Delhi'
+  country: 'India'
+
+Row 2:
+  entity_id: 'S2-764573417'
+  business_name: '-- Holloway Peak Inc Seafood'
+  business_address: '105 ELM ST, MORGANTON, NC'
+  country: 'US'
+
+Row 3:
+  entity_id: 'S2-639257739'
+  business_name: 'आदित्य प्रॉपर्टीज एलएलपी'
+  business_address: 'G-3/571, GULMOHAR COLONY, BHOPAL, Madhya Pradesh'
+  country: 'India'
+
+
+--- Performance ---
+Runtime: 12.09 seconds
+Approximate RAM usage: 72.32 MB
+\n\n==================================================\nREPORT: train_source3_profile.txt\n==================================================\n\n=== Profiling Report for train_source3.tsv ===
+Exact file size on disk: 503,705,637 bytes
+Total rows: 5,285,603
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 18 missing/null-like (0.00%)
+business_address: 175,916 missing/null-like (3.33%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 5,285,603
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 4,651,609
+Min length: 2
+Max length: 123
+Average length: 25.20
+Empty or extremely short names (<=2 chars): 9,275 (0.18%)
+
+--- Business Address Stats ---
+Min length: 2
+Max length: 240
+Average length: 48.32
+Empty or extremely short addresses (<=5 chars): 14 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 3,170,056
+  India: 2,115,547
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S3-202863386'
+  business_name: 'wilfordhancock.com'
+  business_address: 'Mack Rd, Haltom City, Texas'
+  country: 'US'
+
+Row 2:
+  entity_id: 'S3-859268022'
+  business_name: 'International South Consultants Private Ltd'
+  business_address: None
+  country: 'India'
+
+Row 3:
+  entity_id: 'S3-22467283'
+  business_name: 'LLC Moncada Léarning Center'
+  business_address: '5780 Fawn Ct, Fort Worth, Texas'
+  country: 'US'
+
+
+--- Performance ---
+Runtime: 12.06 seconds
+Approximate RAM usage: 76.54 MB
+\n

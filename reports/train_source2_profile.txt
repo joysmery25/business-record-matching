@@ -1,0 +1,67 @@
+=== Profiling Report for train_source2.tsv ===
+Exact file size on disk: 489,301,488 bytes
+Total rows: 5,034,616
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 5 missing/null-like (0.00%)
+business_address: 168,967 missing/null-like (3.36%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 5,034,616
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 4,402,009
+Min length: 2
+Max length: 104
+Average length: 25.10
+Empty or extremely short names (<=2 chars): 704 (0.01%)
+
+--- Business Address Stats ---
+Min length: 8
+Max length: 249
+Average length: 47.83
+Empty or extremely short addresses (<=5 chars): 0 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 3,016,817
+  India: 2,017,799
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S2-166376419'
+  business_name: 'राम मार्केटिंग प्राइवेट लिमिटेड'
+  business_address: 'KH NO. -570/13, NEW DELHI, WEST DELHI, Delhi'
+  country: 'India'
+
+Row 2:
+  entity_id: 'S2-764573417'
+  business_name: '-- Holloway Peak Inc Seafood'
+  business_address: '105 ELM ST, MORGANTON, NC'
+  country: 'US'
+
+Row 3:
+  entity_id: 'S2-639257739'
+  business_name: 'आदित्य प्रॉपर्टीज एलएलपी'
+  business_address: 'G-3/571, GULMOHAR COLONY, BHOPAL, Madhya Pradesh'
+  country: 'India'
+
+
+--- Performance ---
+Runtime: 12.09 seconds
+Approximate RAM usage: 72.32 MB

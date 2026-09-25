@@ -1,0 +1,67 @@
+=== Profiling Report for train_source3.tsv ===
+Exact file size on disk: 503,705,637 bytes
+Total rows: 5,285,603
+
+--- Columns & Initial DuckDB Inferred Types ---
+- entity_id: VARCHAR
+- business_name: VARCHAR
+- business_address: VARCHAR
+- country: VARCHAR
+
+--- Missing Values & Null-like Values ---
+entity_id: 0 missing/null-like (0.00%)
+business_name: 18 missing/null-like (0.00%)
+business_address: 175,916 missing/null-like (3.33%)
+country: 0 missing/null-like (0.00%)
+
+--- Entity ID Stats ---
+Unique entity_id values: 5,285,603
+Rows with duplicate entity_id values: 0
+
+--- Business Name Stats ---
+Unique business names: 4,651,609
+Min length: 2
+Max length: 123
+Average length: 25.20
+Empty or extremely short names (<=2 chars): 9,275 (0.18%)
+
+--- Business Address Stats ---
+Min length: 2
+Max length: 240
+Average length: 48.32
+Empty or extremely short addresses (<=5 chars): 14 (0.00%)
+
+--- Country Stats ---
+Unique countries: 2
+Country distribution (Top 20):
+  US: 3,170,056
+  India: 2,115,547
+
+--- Whitespace Issues ---
+business_name with leading/trailing whitespace: 0
+business_address with leading/trailing whitespace: 0
+country with leading/trailing whitespace: 0
+
+--- Safe Examples (Raw Structure) ---
+Row 1:
+  entity_id: 'S3-202863386'
+  business_name: 'wilfordhancock.com'
+  business_address: 'Mack Rd, Haltom City, Texas'
+  country: 'US'
+
+Row 2:
+  entity_id: 'S3-859268022'
+  business_name: 'International South Consultants Private Ltd'
+  business_address: None
+  country: 'India'
+
+Row 3:
+  entity_id: 'S3-22467283'
+  business_name: 'LLC Moncada Léarning Center'
+  business_address: '5780 Fawn Ct, Fort Worth, Texas'
+  country: 'US'
+
+
+--- Performance ---
+Runtime: 12.06 seconds
+Approximate RAM usage: 76.54 MB
