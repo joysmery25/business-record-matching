@@ -1,0 +1,27 @@
+SIMILARITY FEATURE EVALUATION (10K QUICK)
+=========================================
+Total candidate pairs processed: 10,000
+True matches: 114
+Non-matches: 9,886
+
+--- Name Similarity (TF-IDF Char 3-4 Grams) ---
+Matches     -> Min: 0.0000 | Max: 1.0000 | Mean: 0.8712 | Median: 0.9542
+Non-matches -> Min: 0.0000 | Max: 1.0000 | Mean: 0.4985 | Median: 0.4520
+
+--- Address Similarity (TF-IDF Word 1-2 Grams) ---
+Matches     -> Min: 0.0000 | Max: 1.0000 | Mean: 0.6425 | Median: 0.6887
+Non-matches -> Min: 0.0000 | Max: 1.0000 | Mean: 0.0173 | Median: 0.0000
+
+--- Exact Match Features ---
+Exact Country:
+  Matches:     114
+  Non-matches: 9,843
+Exact Name Compact:
+  Matches:     32
+  Non-matches: 459
+Exact Address Compact:
+  Matches:     7
+  Non-matches: 2
+
+Generation & Evaluation Runtime: 19.76 seconds
+Peak RAM: 528.52 MB
