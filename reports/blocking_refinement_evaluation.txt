@@ -1,0 +1,113 @@
+BLOCKING REFINEMENT EVALUATION REPORT
+=====================================
+Dataset/subset used: 10,000 random S1 records (SAME AS BASELINE)
+Total Expected Matches in sample: 34425
+
+--- Individual Strategy Performance ---
+Strategy: exact_name
+  Candidate Recall: 22.6928% (7812/34425)
+  Total Candidates: 101,129
+  Avg per S1:       10.11
+  Median per S1:    1.0
+  Max for one S1:   378
+  S1s with 0 cands: 2,884
+
+Strategy: postal_name_prefix4
+  Candidate Recall: 3.8489% (1325/34425)
+  Total Candidates: 1,376
+  Avg per S1:       0.14
+  Median per S1:    0.0
+  Max for one S1:   8
+  S1s with 0 cands: 9,462
+
+Strategy: rare_name_token_rare_addr_token
+  Candidate Recall: 58.2077% (20038/34425)
+  Total Candidates: 101,368
+  Avg per S1:       10.14
+  Median per S1:    4.0
+  Max for one S1:   558
+  S1s with 0 cands: 2,173
+
+Strategy: name_prefix5_postal
+  Candidate Recall: 3.2709% (1126/34425)
+  Total Candidates: 1,155
+  Avg per S1:       0.12
+  Median per S1:    0.0
+  Max for one S1:   8
+  S1s with 0 cands: 9,514
+
+Strategy: rare_name_token_country
+  Candidate Recall: 66.1525% (22773/34425)
+  Total Candidates: 46,379,767
+  Avg per S1:       4637.98
+  Median per S1:    1767.0
+  Max for one S1:   46,465
+  S1s with 0 cands: 1,860
+
+Strategy: first_word_name_address
+  Candidate Recall: 16.1859% (5572/34425)
+  Total Candidates: 64,236
+  Avg per S1:       6.42
+  Median per S1:    0.0
+  Max for one S1:   851
+  S1s with 0 cands: 6,675
+
+Strategy: house_num_name_prefix5
+  Candidate Recall: 30.0276% (10337/34425)
+  Total Candidates: 35,037
+  Avg per S1:       3.50
+  Median per S1:    1.0
+  Max for one S1:   308
+  S1s with 0 cands: 4,764
+
+Strategy: rare_name_token_postal
+  Candidate Recall: 3.2912% (1133/34425)
+  Total Candidates: 1,171
+  Avg per S1:       0.12
+  Median per S1:    0.0
+  Max for one S1:   8
+  S1s with 0 cands: 9,552
+
+Strategy: exact_address_country
+  Candidate Recall: 8.1685% (2812/34425)
+  Total Candidates: 3,534
+  Avg per S1:       0.35
+  Median per S1:    0.0
+  Max for one S1:   14
+  S1s with 0 cands: 7,581
+
+Strategy: rare_name_prefix8_country
+  Candidate Recall: 53.7836% (18515/34425)
+  Total Candidates: 1,957,739
+  Avg per S1:       195.77
+  Median per S1:    14.0
+  Max for one S1:   4,952
+  S1s with 0 cands: 1,551
+
+Strategy: house_num_rare_name_token
+  Candidate Recall: 26.4982% (9122/34425)
+  Total Candidates: 30,571
+  Avg per S1:       3.06
+  Median per S1:    0.0
+  Max for one S1:   333
+  S1s with 0 cands: 5,422
+
+--- UNION of All Strategies ---
+Union Candidate Recall: 82.9862% (28568/34425)
+  S1->S2 Recall: 82.2113% (13726/16696)
+  S1->S3 Recall: 83.7159% (14842/17729)
+Union Total Candidates: 47,374,273
+Avg per S1:       4737.43
+Median per S1:    1836.0
+Max for one S1:   46,465
+S1s with 0 cands: 34
+
+--- Analysis & Recommendations ---
+Baseline Comparison:
+- Baseline Recall: 76.35%
+- Refined Recall:  82.9862%
+- Baseline Avg Cands: 4,493.91
+- Refined Avg Cands:  4737.43
+
+Runtime: 40.51 seconds
+Peak RAM: 3573.30 MB
