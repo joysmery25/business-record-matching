@@ -1,0 +1,81 @@
+STEP 6: PRECISION-FOCUSED THRESHOLD OPTIMIZATION
+==================================================
+
+1. THRESHOLD ANALYSIS (Test Set Only)
+Threshold  | Pred Pos   | TP    | FP    | FN    | TN    | Precision  | Recall     | F1        
+-----------------------------------------------------------------------------------------------
+0.500      | 37         | 29    | 8     | 4     | 2868  | 0.7838     | 0.8788     | 0.8286    
+0.700      | 28         | 24    | 4     | 9     | 2872  | 0.8571     | 0.7273     | 0.7869    
+0.800      | 24         | 21    | 3     | 12    | 2873  | 0.8750     | 0.6364     | 0.7368    
+0.900      | 11         | 10    | 1     | 23    | 2875  | 0.9091     | 0.3030     | 0.4545    
+0.950      | 9          | 8     | 1     | 25    | 2875  | 0.8889     | 0.2424     | 0.3810    
+0.970      | 7          | 7     | 0     | 26    | 2876  | 1.0000     | 0.2121     | 0.3500    
+0.980      | 7          | 7     | 0     | 26    | 2876  | 1.0000     | 0.2121     | 0.3500    
+0.990      | 6          | 6     | 0     | 27    | 2876  | 1.0000     | 0.1818     | 0.3077    
+0.995      | 6          | 6     | 0     | 27    | 2876  | 1.0000     | 0.1818     | 0.3077    
+0.999      | 6          | 6     | 0     | 27    | 2876  | 1.0000     | 0.1818     | 0.3077    
+
+2. PRECISION TARGET
+Highest measured precision: 100.00%
+100% observed precision on this evaluation sample (0 observed false positives)
+Precision near 99% recall: 0.00%
+Precision near 95% recall: 0.00%
+Precision near 90% recall: 0.00%
+Highest threshold producing useful matches: 0.97
+
+3. PRECISION-ORIENTED HARD RULES (Full 10K Dataset)
+
+Rule A (exact_country & exact_name):
+  TP: 32, FP: 458, FN: 82, TN: 9428
+  Precision: 0.0653, Recall: 0.2807, F1: 0.1060
+  Predicted MATCH: 490
+
+Rule B (exact_country & exact_addr):
+  TP: 7, FP: 2, FN: 107, TN: 9884
+  Precision: 0.7778, Recall: 0.0614, F1: 0.1138
+  Predicted MATCH: 9
+
+Rule C (name>=0.95 & addr>=0.80 & country):
+  TP: 19, FP: 0, FN: 95, TN: 9886
+  Precision: 1.0000, Recall: 0.1667, F1: 0.2857
+  Predicted MATCH: 19
+
+Rule D (name>=0.90 & addr>=0.80 & country):
+  TP: 23, FP: 0, FN: 91, TN: 9886
+  Precision: 1.0000, Recall: 0.2018, F1: 0.3358
+  Predicted MATCH: 23
+
+Rule E (name>=0.95 & addr>=0.90 & country):
+  TP: 5, FP: 0, FN: 109, TN: 9886
+  Precision: 1.0000, Recall: 0.0439, F1: 0.0840
+  Predicted MATCH: 5
+
+Rule F (prob>=0.99 & country):
+  TP: 87, FP: 0, FN: 27, TN: 9886
+  Precision: 1.0000, Recall: 0.7632, F1: 0.8657
+  Predicted MATCH: 87
+
+Rule G (prob>=0.995 & country):
+  TP: 87, FP: 0, FN: 27, TN: 9886
+  Precision: 1.0000, Recall: 0.7632, F1: 0.8657
+  Predicted MATCH: 87
+
+4. THREE-WAY DECISION SYSTEM (Full 10K Dataset)
+
+Threshold: >= 0.990
+  MATCH: 87
+  REVIEW: 39
+  NON_MATCH: 9874
+  MATCH Group Precision: 1.0000, Recall: 0.7632
+
+Threshold: >= 0.995
+  MATCH: 87
+  REVIEW: 39
+  NON_MATCH: 9874
+  MATCH Group Precision: 1.0000, Recall: 0.7632
+
+Threshold: >= 0.999
+  MATCH: 87
+  REVIEW: 39
+  NON_MATCH: 9874
+  MATCH Group Precision: 1.0000, Recall: 0.7632
